@@ -110,3 +110,15 @@
 ### 5.5 過去の料理を参照する
 
 <img src="./ロバストネス図/ロバストネス図_過去の料理を参照する.png">
+
+## 6. システムアーキテクチャ
+
+<img src="./システムアーキテクチャ.jpg">
+
+## 7. クラス図
+https://docs.google.com/presentation/d/1j3wQL21SlykMVs-ct3oPGUWNIIika0J7o4yvhLpZWt0/edit#slide=id.g8ea1caff92_0_246 を参照  
+
+<img src="./クラス図/クラス図1.jpg">
+<img src="./クラス図/クラス図2.jpg">
+<img src="./クラス図/クラス図3.jpg">
+<img src="./クラス図/クラス図4.jpg">
