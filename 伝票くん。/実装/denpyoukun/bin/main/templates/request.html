@@ -10,20 +10,32 @@
   <body>
     <h1>要望を入力してください。</h1>
 
-    <!-- TODO 入力フォームを作成する -->
+    <form th:action="@{/postRequest}" th:object="${requestForm}" method="post">
+      <label for="name">名前：</label>
 
-    <!-- <form th:action="@{/read}" th:object="${tsubuyakiForm}" method="post">
-      <label for="name">お名前：</label>
+      <input type="text" required th:field="*{name}" size="32" />
 
-      <input type="text" th:field="*{name}" size="8" />
+      <br />
 
-      <label for="comment">キーワード：</label>
+      <label for="category">カテゴリ：</label>
 
-      <input type="text" required th:field="*{comment}" />
+      <input type="text" required th:field="*{category}" />
 
-      <input type="submit" value="つぶやく" />
-    </form> -->
+      <br />
 
-    <a th:href="@{/success}">送信</a>
+      <label for="option">その他の要望：</label>
+
+      <input type="text" required th:field="*{option}" />
+
+      <br />
+
+      <label for="plan">提供予定日：</label>
+
+      <input type="date" required th:field="*{plan}" />
+
+      <br />
+
+      <input type="submit" value="送信" />
+    </form>
   </body>
 </html>

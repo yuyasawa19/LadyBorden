@@ -5,10 +5,10 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import tokuronI.group1.denpyoukun.entity.Tsubuyaki;
+import tokuronI.group1.denpyoukun.entity.resident;
 
 @Repository
 
-public interface TsubuyakiRepository extends CrudRepository<Tsubuyaki, Long> {
-    public List<Tsubuyaki> findByCommentLike(String word);
+public interface residentRepository extends CrudRepository<resident, Long> {
+    // public List<resident> findByNameLike(String word);
 }
