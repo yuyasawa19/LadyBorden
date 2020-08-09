@@ -10,7 +10,12 @@
   <body>
     <h1>ユーザを選択してください。</h1>
 
-    <!-- ユーザの一覧が出たらいいな -->
+    <ul>
+      <li th:each="r: ${residentList}">
+        ID:[[${r.id}]] / name:[[${r.name}]] / photo:[[${r.photo}]]<br />
+        <a th:href="@{/result(id =${r.id})}">リンク</a>
+      </li>
+    </ul>
 
     <a th:href="@{/result}">ユーザNN</a>
   </body>

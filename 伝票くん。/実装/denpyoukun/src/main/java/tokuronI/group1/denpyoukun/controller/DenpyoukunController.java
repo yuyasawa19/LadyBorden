@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import tokuronI.group1.denpyoukun.service.DenpyoukunService;
+import tokuronI.group1.denpyoukun.entity.dish;
+import tokuronI.group1.denpyoukun.entity.resident;
 
 @Controller
 public class DenpyoukunController {
@@ -42,15 +44,19 @@ public class DenpyoukunController {
         return "success";
     }
 
-    // ユーザ選択画面を表示
+    // ユーザ選択画面を表示 TODO
     @GetMapping("/resident")
-    String showResidentList() {
+    String showResidentList(Model model) {
+        List<resident> list = ds.getAllResident(); // 全つぶやきを取得
+        model.addAttribute("residentList", list); // モデル属性にリストをセット
         return "resident_list";
     }
 
-    // ユーザの料理を表示 テスト
+    // ユーザの料理を表示 TODO
     @GetMapping("/result")
-    String showResult() {
+    String showResult(Model model, @RequestParam("id") Long id) {
+        dish dish = ds.getDishById(id);
+        model.addAttribute("dish", dish);
         return "result";
     }
 

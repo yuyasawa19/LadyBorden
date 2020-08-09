@@ -7,7 +7,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import tokuronI.group1.denpyoukun.entity.dish;
 import tokuronI.group1.denpyoukun.entity.request;
+import tokuronI.group1.denpyoukun.entity.resident;
 import tokuronI.group1.denpyoukun.repository.requestRepository;
 
 @Service
@@ -20,6 +22,22 @@ public class DenpyoukunService {
     // 要望の保存して、保存したものを返す TODO
     public request postRequest(request r) {
         return r;
+    }
+
+    // 全居住者を取得する TODO
+    public List<resident> getAllResident() {
+        // 全居住者を取得する TODO
+        List<resident> list = new ArrayList<resident>();
+        list.add(new resident(-1L, "testUser", "null"));// テスト用データを投入
+
+        return list;
+    }
+
+    // idから料理情報を取得する TODO
+    public dish getDishById(Long id) {
+        // idから料理情報を取得する TODO
+        return new dish(-2L, "カテゴリテスト", new Date(), "絵");// 料理のテストデータ
+
     }
 
     // // つぶやきを投稿
