@@ -7,8 +7,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
 
-@Data
-public class requestForm {
+public class RequestForm {
 
     String name; // 要望した人の名前
     String category; // 料理の種類

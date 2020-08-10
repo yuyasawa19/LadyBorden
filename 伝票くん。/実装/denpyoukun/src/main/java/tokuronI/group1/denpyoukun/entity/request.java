@@ -13,7 +13,7 @@ import lombok.Data;
 @Data
 @Entity
 
-public class request {
+public class Request {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id; // 要望エンティティの識別子

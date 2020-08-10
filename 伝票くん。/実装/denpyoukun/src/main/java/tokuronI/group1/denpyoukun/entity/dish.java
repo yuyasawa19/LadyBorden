@@ -14,7 +14,7 @@ import lombok.Data;
 @Data
 @Entity
 @AllArgsConstructor
-public class dish {
+public class Dish {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id; // 料理エンティティの識別子

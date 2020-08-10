@@ -14,7 +14,7 @@ import lombok.Data;
 @Entity
 @AllArgsConstructor
 
-public class resident {
+public class Resident {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id; // 居住者エンティティの識別子

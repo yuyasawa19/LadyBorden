@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import tokuronI.group1.denpyoukun.service.DenpyoukunService;
-import tokuronI.group1.denpyoukun.entity.dish;
-import tokuronI.group1.denpyoukun.entity.resident;
+import tokuronI.group1.denpyoukun.entity.Dish;
+import tokuronI.group1.denpyoukun.entity.Resident;
 
 @Controller
 public class DenpyoukunController {
@@ -34,7 +34,7 @@ public class DenpyoukunController {
     // 要望入力画面を表示
     @GetMapping("/request")
     String showRequsetMenu(Model model) {
-        model.addAttribute("requestForm", new requestForm()); // 空フォームをセット
+        model.addAttribute("requestForm", new RequestForm()); // 空フォームをセット
         return "request";
     }
 
@@ -47,7 +47,7 @@ public class DenpyoukunController {
     // ユーザ選択画面を表示 TODO
     @GetMapping("/resident")
     String showResidentList(Model model) {
-        List<resident> list = ds.getAllResident(); // 全つぶやきを取得
+        List<Resident> list = ds.getAllResident(); // 全つぶやきを取得
         model.addAttribute("residentList", list); // モデル属性にリストをセット
         return "resident_list";
     }
@@ -55,14 +55,14 @@ public class DenpyoukunController {
     // ユーザの料理を表示 TODO
     @GetMapping("/result")
     String showResult(Model model, @RequestParam("id") Long id) {
-        dish dish = ds.getDishById(id);
+        Dish dish = ds.getDishById(id);
         model.addAttribute("dish", dish);
         return "result";
     }
 
     // ユーザの要望を保存 TODO
     @PostMapping("/postRequest")
-    String postRequest(Model model, @ModelAttribute("requestForm") requestForm form) {
+    String postRequest(Model model, @ModelAttribute("requestForm") RequestForm form) {
 
         // フォームからエンティティに移し替え TODO
 
