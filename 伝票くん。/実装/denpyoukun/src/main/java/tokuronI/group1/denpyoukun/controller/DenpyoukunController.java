@@ -1,5 +1,6 @@
 package tokuronI.group1.denpyoukun.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import tokuronI.group1.denpyoukun.service.DenpyoukunService;
-import tokuronI.group1.denpyoukun.entity.dish;
-import tokuronI.group1.denpyoukun.entity.resident;
+import tokuronI.group1.denpyoukun.entity.Dish;
+import tokuronI.group1.denpyoukun.entity.Resident;
+import tokuronI.group1.denpyoukun.entity.Request;
 
 @Controller
 public class DenpyoukunController {
@@ -47,7 +49,7 @@ public class DenpyoukunController {
     // ユーザ選択画面を表示 TODO
     @GetMapping("/resident")
     String showResidentList(Model model) {
-        List<resident> list = ds.getAllResident(); // 全つぶやきを取得
+        List<Resident> list = ds.getAllResident(); // 全つぶやきを取得
         model.addAttribute("residentList", list); // モデル属性にリストをセット
         return "resident_list";
     }
@@ -55,7 +57,7 @@ public class DenpyoukunController {
     // ユーザの料理を表示 TODO
     @GetMapping("/result")
     String showResult(Model model, @RequestParam("id") Long id) {
-        dish dish = ds.getDishById(id);
+        Dish dish = ds.getDishById(id);
         model.addAttribute("dish", dish);
         return "result";
     }
@@ -65,9 +67,14 @@ public class DenpyoukunController {
     String postRequest(Model model, @ModelAttribute("requestForm") requestForm form) {
 
         // フォームからエンティティに移し替え TODO
+        Request r = new Request();
+        r.setName(form.getName());
+        r.setCategory(form.getCategory());
+        r.setOpt(form.getOption());
+        r.setPlan(form.getPlan());
 
         // サービスに投稿処理を依頼 TODO
-        // ds.postRequest(***);
+        ds.postRequest(r);
 
         // モデルに属性をセットする requestFormを返してるだけ TODO
         model.addAttribute("requestForm", form);

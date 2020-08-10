@@ -7,18 +7,21 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import lombok.Data;
 
 @Data
 @Entity
 
-public class request {
+public class Request {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id; // 要望エンティティの識別子
     String name; // 要望した人の名前
     String category; // 料理の種類
-    String option; // その他の要望
+    String opt; // その他の要望
+    @Temporal(TemporalType.TIMESTAMP)
     Date plan; // 料理の提供予定日時
 }
