@@ -21,7 +21,7 @@ public class Request {
     Long id; // 要望エンティティの識別子
     String name; // 要望した人の名前
     String category; // 料理の種類
-    String option; // その他の要望
+    String opt; // その他の要望
     @Temporal(TemporalType.TIMESTAMP)
     Date plan; // 料理の提供予定日時
 }

@@ -70,10 +70,8 @@ public class DenpyoukunController {
         Request r = new Request();
         r.setName(form.getName());
         r.setCategory(form.getCategory());
-        r.setOption(form.getOption());
+        r.setOpt(form.getOption());
         r.setPlan(form.getPlan());
-
-        // System.out.println(form.getPlan() instanceof Date);
 
         // サービスに投稿処理を依頼 TODO
         ds.postRequest(r);

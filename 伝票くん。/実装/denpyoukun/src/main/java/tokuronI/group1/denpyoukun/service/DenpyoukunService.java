@@ -21,7 +21,6 @@ public class DenpyoukunService {
 
     // 要望の保存して、保存したものを返す TODO
     public Request postRequest(Request r) {
-        // r.setPlan(new Date()); // 作成日時をセット
         return rr.save(r); // セーブしたオブジェクトを返却
     }
 
