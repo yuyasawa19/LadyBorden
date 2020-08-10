@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>伝票くん。</title>
+  </head>
+
+  <body>
+    <h1>要望を入力してください。</h1>
+
+    <form th:action="@{/postRequest}" th:object="${requestForm}" method="post">
+      <label for="name">名前：</label>
+
+      <input type="text" required th:field="*{name}" size="32" />
+
+      <br />
+
+      <label for="category">カテゴリ：</label>
+
+      <input type="text" required th:field="*{category}" />
+
+      <br />
+
+      <label for="option">その他の要望：</label>
+
+      <input type="text" required th:field="*{option}" />
+
+      <br />
+
+      <label for="plan">提供予定日：</label>
+
+      <input type="date" required th:field="*{plan}" />
+
+      <br />
+
+      <input type="submit" value="送信" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>伝票くん。</title>
+  </head>
+
+  <body>
+    <h1>ユーザを選択してください。</h1>
+
+    <ul>
+      <li th:each="r: ${residentList}">
+        ID:[[${r.id}]] / name:[[${r.name}]] / photo:[[${r.photo}]]<br />
+        <a th:href="@{/result(id =${r.id})}">リンク</a>
+      </li>
+    </ul>
+
+    <a th:href="@{/result}">ユーザNN</a>
+  </body>
+</html>
