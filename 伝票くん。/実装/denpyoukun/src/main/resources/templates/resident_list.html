@@ -12,7 +12,7 @@
 
     <ul>
       <li th:each="r: ${residentList}">
-        ID:[[${r.id}]] / name:[[${r.name}]] / photo:[[${r.photo}]]<br />
+        ID:[[${r.id}]] / name:[[${r.name}]] / [[${r.category}]] / [[${r.opt}]] / [[${r.plan}]]<br />
         <a th:href="@{/result(id =${r.id})}">リンク</a>
       </li>
     </ul>

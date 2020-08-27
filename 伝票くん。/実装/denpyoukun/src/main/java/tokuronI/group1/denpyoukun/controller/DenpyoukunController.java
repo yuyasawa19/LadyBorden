@@ -49,7 +49,7 @@ public class DenpyoukunController {
     // ユーザ選択画面を表示 TODO
     @GetMapping("/resident")
     String showResidentList(Model model) {
-        List<Resident> list = ds.getAllResident(); // 全つぶやきを取得
+        List<Request> list = ds.getAllRequest(); // 全つぶやきを取得
         model.addAttribute("residentList", list); // モデル属性にリストをセット
         return "resident_list";
     }

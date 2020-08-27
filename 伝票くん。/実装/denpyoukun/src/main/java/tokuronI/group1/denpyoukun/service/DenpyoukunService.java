@@ -3,6 +3,7 @@ package tokuronI.group1.denpyoukun.service;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import tokuronI.group1.denpyoukun.entity.Dish;
 import tokuronI.group1.denpyoukun.entity.Request;
 import tokuronI.group1.denpyoukun.entity.Resident;
+import tokuronI.group1.denpyoukun.repository.dishRepository;
 import tokuronI.group1.denpyoukun.repository.requestRepository;
 
 @Service
@@ -18,6 +20,7 @@ public class DenpyoukunService {
 
     @Autowired
     requestRepository rr; // レポジトリ
+    dishRepository dr;
 
     // 要望の保存して、保存したものを返す TODO
     public Request postRequest(Request r) {
@@ -25,10 +28,21 @@ public class DenpyoukunService {
     }
 
     // 全居住者を取得する TODO
-    public List<Resident> getAllResident() {
+    // public List<Resident> getAllResident() {
+    //     // 全居住者を取得する TODO
+    //     List<Resident> list = new ArrayList<Resident>();
+    //     list.add(new Resident(-1L, "testUser", "null"));// テスト用データを投入
+
+    //     return list;
+    // }
+
+    // 全居住者を取得する TODO
+    public List<Request> getAllRequest() {
         // 全居住者を取得する TODO
-        List<Resident> list = new ArrayList<Resident>();
-        list.add(new Resident(-1L, "testUser", "null"));// テスト用データを投入
+        List<Request> list = new ArrayList<Request>();
+        Iterable<Request> found = rr.findAll();
+        found.forEach(list::add);
+        // list.add(new Resident(-1L, "testUser", "null"));// テスト用データを投入
 
         return list;
     }
@@ -36,6 +50,11 @@ public class DenpyoukunService {
     // idから料理情報を取得する TODO
     public Dish getDishById(Long id) {
         // idから料理情報を取得する TODO
+        
+        Optional<Dish> found = dr.findById(id);
+        // if(found.isPresent()){
+        //     return found.get();
+        // }
         return new Dish(-2L, "カテゴリテスト", new Date(), "絵");// 料理のテストデータ
 
     }
