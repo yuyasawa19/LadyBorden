@@ -9,7 +9,7 @@
 
   <body>
     <h1>要望の入力に成功しました。</h1>
-    <!-- ここはコントローラに合わせて適宜変える -->
+
     名前：[[${requestForm.name}]]
     <br />
     カテゴリ：[[${requestForm.category}]]
@@ -18,12 +18,6 @@
     <br />
     提供予定日：
     <p th:text="${#dates.format(requestForm.plan, 'yyyy年MM月dd日')}"></p>
-
-    <!-- String name; // 要望した人の名前
-    String category; // 料理の種類
-    String option; // その他の要望
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    Date plan; // 料理の提供予定日時 -->
 
     <a th:href="@{/top}">トップへ</a>
   </body>

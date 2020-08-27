@@ -9,4 +9,6 @@ import tokuronI.group1.denpyoukun.entity.Request;
 
 public interface requestRepository extends CrudRepository<Request, Long> {
 
+    Iterable<Request> findByName(String name);
+
 }
