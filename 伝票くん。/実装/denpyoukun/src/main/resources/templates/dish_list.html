@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>伝票くん。</title>
+  </head>
+
+  <body>
+    <h1>[[${name}]]さんの料理</h1>
+
+    <h2>----------------------------------------</h2>
+
+    <li th:each="dish:${dishList}">
+      ID：[[${dish.id}]]
+      <br />
+      カテゴリ：[[${dish.category}]]
+      <br />
+      画像：[[${dish.picture}]]
+      <br />
+      要望：[[${dish.opt}]]
+      <br />
+      提供予定日：
+      <p th:text="${#dates.format(dish.plan, 'yyyy年MM月dd日')}"></p>
+      <h2>----------------------------------------</h2>
+    </li>
+
+    <a th:href="@{/resident}">戻る</a>
+    <br />
+    <a th:href="@{/top}">トップへ</a>
+  </body>
+</html>

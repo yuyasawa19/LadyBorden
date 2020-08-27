@@ -1,7 +1,6 @@
 package tokuronI.group1.denpyoukun.controller;
 
 import java.util.Date;
-import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 

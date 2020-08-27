@@ -1,7 +1,6 @@
 package tokuronI.group1.denpyoukun.entity;
 
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,10 +9,13 @@ import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
 @AllArgsConstructor
+@NoArgsConstructor
+
 public class Dish {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,4 +27,5 @@ public class Dish {
     // List<String> replaceMenu; // アレルギー用の代替メニュー
     Date plan; // 提供予定日時
     String picture; // シリアライズ化された料理画像
+    String opt;// その他の要望の表示用
 }

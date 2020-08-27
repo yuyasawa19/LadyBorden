@@ -12,11 +12,12 @@
 
     <ul>
       <li th:each="r: ${residentList}">
-        ID:[[${r.id}]] / name:[[${r.name}]] / photo:[[${r.photo}]]<br />
-        <a th:href="@{/result(id =${r.id})}">リンク</a>
+        ID:[[${r.id}]] / name:[[${r.name}]] / photo:[[${r.photo}]]
+        <a th:href="@{/dish_list(id =${r.id})}">選択</a>
+        <br />
       </li>
     </ul>
-
-    <a th:href="@{/result}">ユーザNN</a>
+    <br />
+    <a th:href="@{/top}">戻る</a>
   </body>
 </html>
